@@ -3,6 +3,7 @@ package com.itesco.pizlntI_itesco.models;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
 // Esto genera getters y setters automaticamente si se utiliza lombok
 @Data
@@ -14,4 +15,7 @@ public class User {
     private String firstSurname;
     private String secondSurname;
     private String email;
+    private Boolean active = true;
+    @DocumentReference
+    private Career careerId;
 }

@@ -2,9 +2,7 @@ package com.itesco.pizlntI_itesco.controllers;
 
 import com.itesco.pizlntI_itesco.models.User;
 import com.itesco.pizlntI_itesco.services.UserService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,5 +18,10 @@ public class UserController {
     @GetMapping
     public List<User> findAllUsers() {
         return userService.findAllUser();
+    }
+
+    @PostMapping
+    public User saveUser( @RequestBody User user ) {
+        return userService.saveUser( user );
     }
 }

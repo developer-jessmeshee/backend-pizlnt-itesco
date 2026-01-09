@@ -9,5 +9,4 @@ import org.springframework.stereotype.Repository;
 * de usuarios en MongoDB
 */
 @Repository
-public interface UserRepository extends MongoRepository<User, String> {
-}
+public interface UserRepository extends MongoRepository<User, String> {}
