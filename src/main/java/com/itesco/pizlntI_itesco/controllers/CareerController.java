@@ -1,6 +1,8 @@
 package com.itesco.pizlntI_itesco.controllers;
 
+import com.itesco.pizlntI_itesco.dtos.BaseDeleteRecord;
 import com.itesco.pizlntI_itesco.dtos.CareerDTO;
+import com.itesco.pizlntI_itesco.dtos.UpdateCareerDTO;
 import com.itesco.pizlntI_itesco.models.Career;
 import com.itesco.pizlntI_itesco.services.CareerService;
 import jakarta.validation.Valid;
@@ -25,5 +27,15 @@ public class CareerController {
     @PostMapping
     public Career saveCareer( @Valid @RequestBody CareerDTO career ) {
         return careerService.saveCareer( career );
+    }
+
+    @DeleteMapping
+    public Career deleteCareer( @Valid @RequestBody BaseDeleteRecord props ) {
+        return careerService.deleteCareer( props );
+    }
+
+    @PutMapping
+    public Career updateCareer( @Valid @RequestBody UpdateCareerDTO career ) {
+        return careerService.updateCareer( career );
     }
 }
