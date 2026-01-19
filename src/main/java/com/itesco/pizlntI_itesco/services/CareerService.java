@@ -1,7 +1,7 @@
 package com.itesco.pizlntI_itesco.services;
 
+import com.itesco.pizlntI_itesco.dtos.BaseCreateCatalogDTO;
 import com.itesco.pizlntI_itesco.dtos.BaseDeleteRecord;
-import com.itesco.pizlntI_itesco.dtos.CareerDTO;
 import com.itesco.pizlntI_itesco.dtos.UpdateCareerDTO;
 import com.itesco.pizlntI_itesco.models.Career;
 import com.itesco.pizlntI_itesco.repositories.CareerRepository;
@@ -21,7 +21,7 @@ public class CareerService {
         return careerRepository.findByActiveTrue();
     }
 
-    public Career saveCareer( CareerDTO career ) {
+    public Career saveCareer( BaseCreateCatalogDTO career ) {
         Career newCareer = new Career();
 
         newCareer.setName( career.getName() );
@@ -43,5 +43,10 @@ public class CareerService {
         newCareer.setName( career.getName() );
 
         return careerRepository.save( newCareer );
+    }
+
+    public Career findCareerById( String id ) {
+        return careerRepository.findById( id )
+                .orElseThrow( () -> new RuntimeException( "Carrera no encontrada" ) );
     }
 }

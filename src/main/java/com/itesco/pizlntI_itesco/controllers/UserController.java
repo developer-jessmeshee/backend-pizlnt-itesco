@@ -1,5 +1,6 @@
 package com.itesco.pizlntI_itesco.controllers;
 
+import com.itesco.pizlntI_itesco.dtos.UserDTO;
 import com.itesco.pizlntI_itesco.models.User;
 import com.itesco.pizlntI_itesco.services.UserService;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +22,7 @@ public class UserController {
     }
 
     @PostMapping
-    public User saveUser( @RequestBody User user ) {
+    public User saveUser( @RequestBody UserDTO user ) {
         return userService.saveUser( user );
     }
 }

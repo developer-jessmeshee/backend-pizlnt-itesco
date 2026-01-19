@@ -1,7 +1,7 @@
 package com.itesco.pizlntI_itesco.controllers;
 
+import com.itesco.pizlntI_itesco.dtos.BaseCreateCatalogDTO;
 import com.itesco.pizlntI_itesco.dtos.BaseDeleteRecord;
-import com.itesco.pizlntI_itesco.dtos.CareerDTO;
 import com.itesco.pizlntI_itesco.dtos.UpdateCareerDTO;
 import com.itesco.pizlntI_itesco.models.Career;
 import com.itesco.pizlntI_itesco.services.CareerService;
@@ -25,7 +25,7 @@ public class CareerController {
     }
 
     @PostMapping
-    public Career saveCareer( @Valid @RequestBody CareerDTO career ) {
+    public Career saveCareer( @Valid @RequestBody BaseCreateCatalogDTO career ) {
         return careerService.saveCareer( career );
     }
 
