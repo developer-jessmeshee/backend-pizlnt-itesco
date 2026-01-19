@@ -26,4 +26,8 @@ public class RoleService {
     public List<Role> findAllRoles() {
         return repository.findAll();
     }
+
+    public Role findRoleById( String id ) {
+        return repository.findById( id ).orElseThrow( () -> new RuntimeException( "Role no encontrado" ) );
+    }
 }

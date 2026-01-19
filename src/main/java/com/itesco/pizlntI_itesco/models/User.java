@@ -16,6 +16,9 @@ public class User {
     private String secondSurname;
     private String email;
     private Boolean active = true;
+    private String password;
     @DocumentReference
     private Career careerId;
+    @DocumentReference
+    private Role roleId;
 }
